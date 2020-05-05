@@ -12,6 +12,7 @@ public enum Charisma implements IAbilities {
 	private int abilityPoints;
 
 	/**
+	 * Contructor used to initialize ability points
 	 * 
 	 * @param abilityLevel
 	 */
