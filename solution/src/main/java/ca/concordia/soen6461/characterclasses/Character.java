@@ -3,14 +3,17 @@ package ca.concordia.soen6461.characterclasses;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import ca.concordia.soen6461.decorator.IClothing;
+import ca.concordia.soen6461.abilities.BoxesMarker;
+import ca.concordia.soen6461.abilities.IItem;
+import ca.concordia.soen6461.abilities.IPower;
+import ca.concordia.soen6461.abilities.SatchelMarker;
 
 public class Character implements ICharacter {
 
-	
-	protected List<IClothing> clothes = new ArrayList<IClothing>();
-	
+	protected List<IItem> satchelItems = new ArrayList<IItem>();
+	protected List<IItem> boxesItems = new ArrayList<IItem>();
+	protected List<IPower> powers = new ArrayList<IPower>();
+
 	@Override
 	public int getStrength() {
 		// TODO Auto-generated method stub
@@ -47,14 +50,19 @@ public class Character implements ICharacter {
 		return 0;
 	}
 
-	
-	public void addCloth(IClothing cloth) {
-		this.clothes.add(cloth);
+	public void addItem(IItem item) {
+		if (item instanceof SatchelMarker) {
+			this.satchelItems.add(item);
+		} else if (item instanceof BoxesMarker) {
+			this.boxesItems.add(item);
+		} else {
+			throw new RuntimeException("Unknown item added");
+		}
 	}
 
 	@Override
-	public List getClothes() {
-		
-		return clothes;
+	public List getSatchelitems() {
+		return satchelItems;
 	}
+
 }
