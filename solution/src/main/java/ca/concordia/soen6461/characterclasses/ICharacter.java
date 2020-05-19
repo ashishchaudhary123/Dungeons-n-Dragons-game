@@ -19,20 +19,18 @@
  */
 package ca.concordia.soen6461.characterclasses;
 
-import ca.concordia.soen6461.abilities.Charisma;
-import ca.concordia.soen6461.abilities.Constitution;
-import ca.concordia.soen6461.abilities.Dexterity;
-import ca.concordia.soen6461.abilities.Intelligence;
-import ca.concordia.soen6461.abilities.Strength;
-import ca.concordia.soen6461.abilities.Wisdom;
+import java.util.List;
 
+import ca.concordia.soen6461.decorator.IClothing;
 
 public interface ICharacter {
-	Strength getStrength();
-	Dexterity getDexterity();
-	Constitution getConstitution();
-	Intelligence getIntelligence();
-	Wisdom getWisdom();
-	Charisma getCharisma();
-
+	int getStrength();
+	int getDexterity();
+	int getConstitution();
+	int getIntelligence();
+	int getWisdom();
+	int getCharisma();
+	
+	void addCloth(IClothing cloth);
+	List getClothes();
 }
