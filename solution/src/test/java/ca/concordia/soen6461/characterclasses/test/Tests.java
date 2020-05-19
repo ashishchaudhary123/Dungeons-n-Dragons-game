@@ -20,26 +20,22 @@
 package ca.concordia.soen6461.characterclasses.test;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import ca.concordia.soen6461.characterclasses.impl.RangerImpl;
+import ca.concordia.soen6461.factory.ItemFactory;
 
 public class Tests {
 
 	@Test
-	public void testRangerStrength() throws IOException {
+	public void testRangerItems() throws IOException {
 
 		RangerImpl ranger = new RangerImpl();
-		Assert.assertEquals("FIT", ranger.getStrength().toString());
+		ranger.addItem(ItemFactory.getItem("satchels", "food"));
+		List sachelItems = ranger.getSatchelitems();
+		Assert.assertEquals("FoodItem[abilityLevel=5]", sachelItems.get(0).toString());
 	}
-
-	@Test
-	public void testRangerStrengthAbility() throws IOException {
-
-		RangerImpl ranger = new RangerImpl();
-		Assert.assertEquals(5, ranger.getStrength().getAbility());
-	}
-
 }
