@@ -1,8 +1,8 @@
 package ca.concordia.soen6461.factory;
 
-import ca.concordia.soen6461.abilities.GoldCoinItem;
 import ca.concordia.soen6461.abilities.IItem;
 import ca.concordia.soen6461.abilities.IPower;
+import ca.concordia.soen6461.decorator.GoldCoinItem;
 
 public class Boxesfactory implements IAbstractFactory {
 

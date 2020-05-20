@@ -15,7 +15,6 @@ public class Shirt implements IClothing, IAbilities {
 		return this.abilityLevel;
 	}
 
-	
 	public String getName() {
 		return "Shirt";
 	}
