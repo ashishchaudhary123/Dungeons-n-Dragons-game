@@ -21,17 +21,21 @@ package ca.concordia.soen6461.client;
 
 import ca.concordia.soen6461.characterclasses.IRanger;
 import ca.concordia.soen6461.characterclasses.impl.RangerImpl;
-import ca.concordia.soen6461.factory.ItemFactory;
+import ca.concordia.soen6461.factory.Factory;
 
 
 public class Client {
 	public static void main(final String[] args) {
 		final IRanger ranger = new RangerImpl();
 		
-		ranger.addItem(ItemFactory.getItem("satchels", "food"));
+		ranger.addItem(new Factory().getItem("satchels", "food"));
 		
-		ranger.addItem(ItemFactory.getItem("Boxes", "Gold Coin"));
+		ranger.addItem(new Factory().getItem("Boxes", "Gold Coin"));
+		
+		ranger.addPower(new Factory().addPower("Power", "infravision"));
 
+		System.out.println(ranger.getBoxesItems().get(0));
+		System.out.println(ranger.getPowers().get(0));
 		System.out.println(ranger.getSatchelitems().get(0));
 
 	}
