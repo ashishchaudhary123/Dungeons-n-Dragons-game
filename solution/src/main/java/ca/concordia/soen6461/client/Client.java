@@ -21,24 +21,18 @@ package ca.concordia.soen6461.client;
 
 import ca.concordia.soen6461.characterclasses.IRanger;
 import ca.concordia.soen6461.characterclasses.impl.RangerImpl;
-import ca.concordia.soen6461.decorator.ArmourDecorator;
-import ca.concordia.soen6461.decorator.BootDecorator;
-import ca.concordia.soen6461.decorator.Shirt;
-import ca.concordia.soen6461.decorator.Socks;
+import ca.concordia.soen6461.factory.ItemFactory;
+
 
 public class Client {
 	public static void main(final String[] args) {
 		final IRanger ranger = new RangerImpl();
-
-		Socks sock = new Socks();
-		Shirt shirt = new Shirt();
-		ArmourDecorator armour = new ArmourDecorator(shirt);
-		BootDecorator boot = new BootDecorator(sock);
-		ranger.addCloth(sock);
-		ranger.addCloth(boot);
-		ranger.addCloth(shirt);
-		ranger.addCloth(armour);
 		
-		System.out.println(ranger.getClothes());
+		ranger.addItem(ItemFactory.getItem("satchels", "food"));
+		
+		ranger.addItem(ItemFactory.getItem("Boxes", "Gold Coin"));
+
+		System.out.println(ranger.getSatchelitems().get(0));
+
 	}
 }
