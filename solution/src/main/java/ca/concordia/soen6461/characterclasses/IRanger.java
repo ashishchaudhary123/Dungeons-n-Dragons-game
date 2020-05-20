@@ -21,4 +21,6 @@ package ca.concordia.soen6461.characterclasses;
 
 public interface IRanger extends ICharacter {
 
+	// int getFinalStrength();
+	
 }

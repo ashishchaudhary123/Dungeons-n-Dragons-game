@@ -21,22 +21,23 @@ package ca.concordia.soen6461.characterclasses;
 
 import java.util.List;
 
+import ca.concordia.soen6461.abilities.Charisma;
+import ca.concordia.soen6461.abilities.Constitution;
+import ca.concordia.soen6461.abilities.Dexterity;
 import ca.concordia.soen6461.abilities.IItem;
 import ca.concordia.soen6461.abilities.IPower;
+import ca.concordia.soen6461.abilities.Intelligence;
+import ca.concordia.soen6461.abilities.Strength;
+import ca.concordia.soen6461.abilities.Wisdom;
 
 public interface ICharacter {
-	int getStrength();
-
-	int getDexterity();
-
-	int getConstitution();
-
-	int getIntelligence();
-
-	int getWisdom();
-
-	int getCharisma();
-
+	Strength getStrength();
+	Dexterity getDexterity();
+	Constitution getConstitution();
+	Intelligence getIntelligence();
+	Wisdom getWisdom();
+	Charisma getCharisma();
+	
 	void addItem(IItem item);
 
 	List getSatchelitems();
@@ -46,4 +47,6 @@ public interface ICharacter {
 	void addPower(IPower ipower);
 	
 	List getPowers();
+	
+	int getFinalStrength(ICharacter character);
 }
