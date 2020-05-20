@@ -3,6 +3,8 @@ package ca.concordia.soen6461.characterclasses;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import ca.concordia.soen6461.abilities.BoxesMarker;
 import ca.concordia.soen6461.abilities.IItem;
 import ca.concordia.soen6461.abilities.IPower;
@@ -63,6 +65,27 @@ public class Character implements ICharacter {
 	@Override
 	public List getSatchelitems() {
 		return satchelItems;
+	}
+
+	@Override
+	public void addPower(IPower ipower) {
+
+		if (ipower instanceof IPower) {
+			this.powers.add(ipower);
+		} else
+			throw new RuntimeException("Unknown Power added");
+
+	}
+
+	@Override
+	public List getPowers() {
+
+		return powers;
+	}
+
+	@Override
+	public List getBoxesItems() {
+		return boxesItems;
 	}
 
 }
