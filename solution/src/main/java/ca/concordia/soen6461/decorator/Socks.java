@@ -19,7 +19,7 @@ public class Socks implements IClothing, IAbilities {
 		return this.abilityLevel;
 	}
 
-	@Override
+
 	public String getName() {
 		
 		return "Socks";

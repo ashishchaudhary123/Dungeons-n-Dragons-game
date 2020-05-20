@@ -15,19 +15,19 @@ public class ArmourDecorator implements IClothing, IAbilities {
 
 	}
 
-	@Override
+	
 	public int getAbility() {
 		// TODO Auto-generated method stub
 		return this.abilityLevel;
 	}
 
-	@Override
+	
 	public String getName() {
 		// TODO Auto-generated method stub
 		return "Armour";
 	}
 
-	@Override
+	
 	public String toString() {
 		return "Armour = [abilityLevel=" + abilityLevel;
 	}

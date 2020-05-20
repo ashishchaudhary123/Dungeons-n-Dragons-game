@@ -15,7 +15,7 @@ public class Shirt implements IClothing, IAbilities {
 		return this.abilityLevel;
 	}
 
-	@Override
+	
 	public String getName() {
 		return "Shirt";
 	}
