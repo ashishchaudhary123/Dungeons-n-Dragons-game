@@ -21,16 +21,29 @@ package ca.concordia.soen6461.characterclasses;
 
 import java.util.List;
 
-import ca.concordia.soen6461.decorator.IClothing;
+import ca.concordia.soen6461.abilities.IItem;
+import ca.concordia.soen6461.abilities.IPower;
 
 public interface ICharacter {
 	int getStrength();
+
 	int getDexterity();
+
 	int getConstitution();
+
 	int getIntelligence();
+
 	int getWisdom();
+
 	int getCharisma();
+
+	void addItem(IItem item);
+
+	List getSatchelitems();
 	
-	void addCloth(IClothing cloth);
-	List getClothes();
+	List getBoxesItems();
+	
+	void addPower(IPower ipower);
+	
+	List getPowers();
 }

@@ -22,10 +22,8 @@ package ca.concordia.soen6461.characterclasses.test;
 import java.io.IOException;
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import ca.concordia.soen6461.characterclasses.impl.RangerImpl;
 import ca.concordia.soen6461.factory.Factory;
 
 public class Tests {
