@@ -33,10 +33,17 @@ public class Client {
 		ranger.addItem(new Factory().getItem("Boxes", "Gold Coin"));
 		
 		ranger.addPower(new Factory().addPower("Power", "infravision"));
-
+		
+	//	ranger.addPower(new Factory().addPower("Power", "spells"));
+		
+		System.out.println(ranger.getStrength().getAbility());
+		
+		
+		
 		System.out.println(ranger.getBoxesItems().get(0));
 		System.out.println(ranger.getPowers().get(0));
 		System.out.println(ranger.getSatchelitems().get(0));
 
+		System.out.println(ranger.getFinalStrength(ranger));
 	}
 }
