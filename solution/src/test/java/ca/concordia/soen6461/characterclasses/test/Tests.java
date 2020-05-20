@@ -22,11 +22,28 @@ package ca.concordia.soen6461.characterclasses.test;
 import java.io.IOException;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 
+import ca.concordia.soen6461.characterclasses.impl.RangerImpl;
 import ca.concordia.soen6461.factory.Factory;
 
 public class Tests {
+
+	@Test
+	public void testRangerStrength() throws IOException {
+
+		RangerImpl ranger = new RangerImpl();
+		Assert.assertEquals("FIT", ranger.getStrength().toString());
+	}
+
+	@Test
+	public void testRangerStrengthAbility() throws IOException {
+
+		RangerImpl ranger = new RangerImpl();
+		Assert.assertEquals(5, ranger.getStrength().getAbility());
+	}
+
 	@Test
 	public void testRangerItems() throws IOException {
 
@@ -43,6 +60,22 @@ public class Tests {
 		ranger.addPower(new Factory().addPower("Power", "spells"));
 		List Powers = ranger.getPowers();
 		Assert.assertEquals("Spells [abilityLevel=6]", Powers.get(0).toString());
+	}
+
+	@Test
+	public void testRangerFinalStrength() throws IOException {
+
+		RangerImpl ranger = new RangerImpl();
+
+		ranger.addItem(new Factory().getItem("satchels", "food"));
+
+		ranger.addItem(new Factory().getItem("Boxes", "Gold Coin"));
+
+		ranger.addPower(new Factory().addPower("Power", "infravision"));
+
+		ranger.getFinalStrength(ranger);
+		
+		Assert.assertEquals(41, ranger.getFinalStrength(ranger));
 	}
 
 }
