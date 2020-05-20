@@ -19,10 +19,34 @@
  */
 package ca.concordia.soen6461.characterclasses.impl;
 
+import ca.concordia.soen6461.abilities.Charisma;
+import ca.concordia.soen6461.abilities.Constitution;
+import ca.concordia.soen6461.abilities.Dexterity;
+import ca.concordia.soen6461.abilities.Intelligence;
+import ca.concordia.soen6461.abilities.Strength;
+import ca.concordia.soen6461.abilities.Wisdom;
 import ca.concordia.soen6461.characterclasses.Character;
 import ca.concordia.soen6461.characterclasses.IRanger;
 
 public class RangerImpl extends Character implements IRanger{
 
-	
+	public RangerImpl(Strength strength, Dexterity dexterity, 
+			Intelligence intelligence, Charisma charisma,
+			Wisdom wisdom, Constitution constitution) {
+		this.strength = strength;
+		this.dexterity = dexterity;
+		this.intelligence = intelligence;
+		this.charisma = charisma;
+		this.wisdom = wisdom;
+		this.constitution = constitution;
+	}
+	public RangerImpl()
+	{
+		this.strength = Strength.FIT;
+		this.charisma = Charisma.confidence;
+		this.intelligence = intelligence.simple;
+		this.constitution = constitution.healthy;
+		this.dexterity = dexterity.sneaky;
+		this.wisdom = wisdom.goodjudgement;
+	}
 }
